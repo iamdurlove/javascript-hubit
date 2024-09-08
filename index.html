@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- <h1 id="title"></h1>
+		<form onsubmit="return validate(event)">
+			<input name="username" id="username" type="text" /> <br />
+			<input name="password" id="password" type="text" /> <br />
+			<input name="cpassword" id="cpassword" type="text" /> <br />
+			<button type="submit">Submit</button>
+		</form> -->
+
+		<h1 class="hello">gsda</h1>
+		<h1 class="hello" id="iii">gsdfa</h1>
+	</body>
+
+	<script>
+		const node = document.getElementById("iii");
+		const a = document.createAttribute("my_attrib");
+		a.value = "newVal";
+		node.setAttributeNode(a);
+		console.log(node.getAttribute("my_attrib")); // "newVal"
+		// const hello = document.querySelectorAll(".hello");
+		// const hello = document.querySelector("#iii");
+		// console.log(hello);
+		// document.getElementById("title").innerHTML = "Hello World";
+
+		// const validate = (e) => {
+		// 	e.preventDefault();
+		// 	const username = document.getElementById("username").value;
+		// 	const password = document.getElementById("password").value;
+		// 	const cpassword = document.getElementById("cpassword").value;
+
+		// 	console.log(username, password, cpassword);
+
+		// 	if (username === "" || password === "" || cpassword === "") {
+		// 		alert("Please fill all the fields");
+		// 		return false;
+		// 	}
+
+		// 	if (password !== cpassword) {
+		// 		alert("Password does not match");
+		// 		return false;
+		// 	}
+
+		// 	// return true;
+		// };
+		// function handle() {
+		// 	alert("hello");
+		// }
+
+		// console.log(document.implementation);
+
+		// document.getElementById('title').innerHTML = "Hello World";
+		// document.querySelector('h1').innerHTML = "Hello World";
+		// console.log('Hello World');
+		// console.log(1+1);
+
+		// var x = 1;
+		// var y = 2;
+
+		// function print(a, b){
+		//     var sum = a + b;
+		//     console.log(sum)
+		// }
+
+		// print(2, 3);
+		// print(5, 3);
+
+		// var name = 10;
+		// var game = "10";
+
+		// var sum = parseInt(name) + parseInt(game);
+
+		// console.log(sum);
+
+		// for(var i = 0; i<100;i++){
+		//     console.log("Hello "+i);
+		// }
+
+		// recursive function
+		// function counter(count) {
+		// 	// display count
+		// 	console.log(count);
+
+		// 	// condition for stopping
+		// 	if (count > 1) {
+		// 		// decrease count
+		// 		count = count - 1;
+
+		// 		// call counter with new value of count
+		// 		counter(count);
+		// 	} else {
+		// 		// terminate execution
+		// 		return;
+		// 	}
+		// }
+
+		// let a;
+
+		// a = 5;
+		// a = 6;
+
+		// console.log(a);
+
+		//
+
+		// let a = 5; //number data type
+		// let x = 6;
+
+		// let b = "hello"; //string data type
+		// let c = true; // boolean data type
+
+		// let string1 = "Ram";
+		// let string2 = "Hari";
+
+		// console.log(a + x);
+
+		// console.log(a + string2);
+	</script>
+</html>

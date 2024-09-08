@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<p id="p1">Hello World!</p>
+		<p style="color: red; background-color: green" class="hello" id="p2">
+			Hello World!
+		</p>
+		<div class="hello" id="p3">Hello Div!</div>
+		<button onclick="handleClick()">Click me to change color</button>
+
+		<script>
+			function handleClick() {
+				const myDiv = document.getElementById("p2");
+				myDiv.style.color = "white";
+				myDiv.style.backgroundColor = "blue";
+				myDiv.style.fontSize = "20px";
+			}
+
+			// const myDiv = document.getElementById("p2");
+			// const myDiv = document.getElementsByClassName("hello")[0];
+			// myDiv.style.color = "white";
+			// myDiv.style.backgroundColor = "blue";
+			// myDiv.style.fontSize = "20px";
+			// myDiv.style.padding = "100px";
+		</script>
+	</body>
+</html>

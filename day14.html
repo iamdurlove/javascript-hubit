@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form onsubmit="check(event);" action="">
+			<input type="text" name="hello" />
+			<button type="submit">Submit</button>
+		</form>
+
+		<div class="my-div">
+			<h1 class="myh1">Hello World</h1>
+		</div>
+		<div id="my-id">
+			<h1>Hello World</h1>
+		</div>
+		<div class="my-div">
+			<h1>Hello World2</h1>
+		</div>
+	</body>
+
+	<script>
+		function check(e) {
+			e.preventDefault();
+			// const input = document.getElementsByName("hello")[0].value;
+			// const form = document.getElementsByTagName("form")[0];
+			// form.innerHTML = "<h1> Hello World </h1>";
+			// console.log(form);
+		}
+
+		//queryselector
+		const myid = document.querySelector("#my-id");
+		const div = document.querySelectorAll("div");
+
+		// setting attribute in div using dom
+		const myiv = document.querySelector(".my-div"); // selecting the div
+		const a = document.createAttribute("id"); // creating an attribute
+		a.value = "thisisid"; // setting the value of the attribute
+		myiv.setAttributeNode(a); // setting the attribute in the div
+
+		// console.log(div);
+
+		//querySelectorAll
+		const mydiv2 = document.querySelectorAll(".my-div")[0];
+		// console.log(mydiv2);
+
+		// get all the elements under body tag
+		console.log(document.body);
+	</script>
+</html>

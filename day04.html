@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    const num1 = prompt( "Enter the first number" );
+    const num2 = prompt( "Enter the second number" )
+    const operator = prompt( "Enter the operator" )
+
+    if ( num1 == "" || num2 == "" || operator == "" )
+    {
+        alert( "input cant be null" )
+    }
+    else if ( isNaN( num1 ) || isNaN( num2 ) )
+    {
+        alert( "Invalid input or type" )
+    }
+    else
+    {
+        switch ( operator )
+        {
+            case '+':
+                alert( parseInt(num1)+parseInt(num2))
+                break
+            case '-':
+                alert(parseInt(num1)-parseInt(num2) )
+                break
+            case '*':
+                alert( parseInt(num1)*parseInt(num2) )
+                break
+            case '/':
+                if ( parseInt(num2) == 0 )
+                {
+                    alert( "Cannot divide by zero" )
+                }
+                else
+                    alert( parseInt(num1)/parseInt(num2) )
+                break
+            default:
+                alert( "Invalid operator" )
+                break
+        }
+    }
+
+    //ternary operator
+    const num = -5;
+    
+    (num < 0 ) ? alert("Negative") : alert("Positive");
+    
+</script>
+</html>

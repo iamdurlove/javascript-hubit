@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<style>
+		.input-divs {
+			display: flex;
+			flex-direction: column;
+		}
+	</style>
+
+	<body>
+		<form onsubmit="return calculate(event)" action="">
+			<div class="input-divs">
+				<label for="length">Length</label>
+				<input type="text" name="length" id="length" />
+				<span class="err" id="length-err"></span>
+			</div>
+			<div class="input-divs">
+				<label for="breadth">breadth</label>
+				<input type="text" name="breadth" id="breadth" />
+				<span class="err" id="breadth-err"></span>
+			</div>
+			<div class="input-divs">
+				<label for="height">height</label>
+				<input type="text" name="height" id="height" />
+				<span class="err" id="height-err"></span>
+			</div>
+			<button type="submit">Calculate Volume</button>
+		</form>
+		<div class="answer-div">
+			<h3 id="answer"></h3>
+		</div>
+	</body>
+	<script>
+		function calculate(e) {
+			e.preventDefault();
+			const length = document.getElementById("length").value;
+			const breadth = document.getElementById("breadth").value;
+			const height = document.getElementById("height").value;
+
+			const answer = document.getElementById("answer");
+			const err = document.getElementsByClassName("err");
+
+			answer.innerHTML = "";
+			for (items of err) {
+				items.innerHTML = "";
+				items.style.color = "red";
+				items.style.fontSize = "12px";
+			}
+
+			let isVaild = true;
+
+			if (length === "") {
+				document.getElementById("length-err").innerHTML = "Length is required";
+				isVaild = false;
+			} else if (isNaN(length)) {
+				document.getElementById("length-err").innerHTML =
+					"Length must be a number";
+				isVaild = false;
+			}
+			if (breadth === "") {
+				document.getElementById("breadth-err").innerHTML =
+					"Breadth is required";
+				isVaild = false;
+			} else if (isNaN(breadth)) {
+				document.getElementById("breadth-err").innerHTML =
+					"Breadth must be a number";
+				isVaild = false;
+			}
+			if (height === "") {
+				document.getElementById("height-err").innerHTML = "Height is required";
+				isVaild = false;
+			} else if (isNaN(height)) {
+				document.getElementById("height-err").innerHTML =
+					"Height must be a number";
+				isVaild = false;
+			}
+
+			if (isVaild) {
+				const volume = parseInt(length) * parseInt(breadth) * parseInt(height);
+				document.getElementById(
+					"answer"
+				).innerHTML = `The volume of the cuboid is ${volume}`;
+			}
+
+			return isVaild;
+		}
+	</script>
+</html>

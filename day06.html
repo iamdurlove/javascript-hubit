@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+
+	<body>
+		<script>
+			const input = prompt("Enter the value to search in the array");
+			const array = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"];
+			let index = -1;
+			for (i in array) {
+				if (input === array[i]) {
+					index = i;
+					break;
+				}
+			}
+			index !== -1
+				? alert("Value found in the array at index: " + index)
+				: alert("Value not found in the array");
+		</script>
+	</body>
+</html>

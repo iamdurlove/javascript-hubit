@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<style>
+		.input-div {
+			width: 40%;
+			display: flex;
+			flex-direction: column;
+		}
+	</style>
+	<body>
+		<form onsubmit="return handleSubmit(event)">
+			<div class="input-div username">
+				<label for="">username</label>
+				<input type="text" name="username" id="username" />
+			</div>
+			<div class="input-div password">
+				<label for="">password</label>
+				<input type="password" name="password" id="password" />
+			</div>
+			<button type="submit">Login</button>
+		</form>
+	</body>
+	<script>
+		function handleSubmit(e) {
+			e.preventDefault();
+			const username = document.getElementById("username").value;
+			const password = document.getElementById("password").value;
+			const spans = document.querySelectorAll("span");
+			for (item of spans) {
+				item.textContent = "";
+			}
+
+			let isValid = true;
+
+			if (username === "") {
+				const newDiv = document.createElement("span");
+				newDiv.innerHTML = "Please enter username";
+				document.querySelector(".username").appendChild(newDiv);
+				newDiv.style.color = "red";
+				isValid = false;
+			} else if (username.length < 4) {
+				const newDiv = document.createElement("span");
+				newDiv.innerHTML = "Username must be atleast 4 characters";
+				document.querySelector(".username").appendChild(newDiv);
+				newDiv.style.color = "red";
+				isValid = false;
+			}
+			if (password === "") {
+				const newDiv = document.createElement("span");
+				newDiv.innerHTML = "Please enter password";
+				document.querySelector(".password").appendChild(newDiv);
+				newDiv.style.color = "red";
+				isValid = false;
+			} else if (password.length < 5) {
+				const newDiv = document.createElement("span");
+				newDiv.innerHTML = "Password must be atleast 8 characters";
+				document.querySelector(".password").appendChild(newDiv);
+				newDiv.style.color = "red";
+				isValid = false;
+			}
+
+			if (isValid) {
+				if (username === "admin" && password === "admin") {
+					const newDiv = document.createElement("span");
+					newDiv.innerHTML = "Login Successful";
+					document.querySelector("form").appendChild(newDiv);
+					newDiv.style.color = "green";
+				} else {
+					const newDiv = document.createElement("span");
+					newDiv.innerHTML = "Incorrect Email or Password";
+					document.querySelector("form").appendChild(newDiv);
+					newDiv.style.color = "red";
+					isValid = false;
+				}
+			}
+		}
+	</script>
+</html>

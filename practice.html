@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<form onclick="handleClick()">
+			<input type="text" id="input" />
+			<button type="submit">Submit</button>
+		</form>
+
+		<h1 id="data"></h1>
+	</body>
+	<script>
+		function handleClick() {
+			var input = document.getElementById("input").value;
+			var set = localStorage.setItem("data", input);
+
+			console.log(set);
+		}
+
+		var get = localStorage.getItem("data");
+		document.getElementById("data").innerHTML = get;
+	</script>
+</html>

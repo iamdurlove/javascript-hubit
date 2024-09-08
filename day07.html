@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<!-- <body onload="alert('page is loaded')"
+    onunload="alert('page is unloaded')"    
+> -->
+
+	<body>
+		<!-- <div class="mydiv">
+        <button onclick="handleClick()" >Click me</button>
+    </div> -->
+
+		<h2>Register Form</h2>
+		<form
+			onsubmit="return validate()"
+			style="display: flex; flex-direction: column; gap: 20px"
+		>
+			<div class="input-div">
+				<label for="username">Username</label> <br />
+				<input type="text" name="username" id="username" />
+			</div>
+			<div class="input-div">
+				<label for="password">Password</label> <br />
+				<input type="password" name="password" id="password" />
+			</div>
+			<div class="input-div">
+				<label for="c-password">Confirm Password</label> <br />
+				<input type="password" name="c-password" id="c-password" />
+			</div>
+			<div class="input-div">
+				<button type="submit">Submit</button>
+			</div>
+		</form>
+	</body>
+	<script>
+		//nested function in javacript
+		// function outerFunction() // outer function defined
+		// {
+		//     function nestedFunction() // nested function defined
+		//     {
+		//        alert( "I am a nested function" )
+		//     }
+		//     nestedFunction(); // nested function invoked
+		// }
+		// outerFunction(); // outer function invoked
+
+		//function constructor in javascript
+
+		// function Person()
+		// {
+		//     this.name = "Hubit";
+		//     this.address = "Milanchowk";
+		//     this.estd = 2016
+		// }
+
+		// const person = new Person();
+
+		// console.log(person);
+		// console.log(person.name);
+		// console.log(person.address);
+		// console.log(person.estd);
+
+		// event handling in javascript
+		//onclick event handler
+		//   function handleClick()
+		// {
+		//     alert("Button clicked");
+		// }
+
+		//onsubmit event handler in javascript
+		function validate() {
+			// if everything is fine
+			alert("submitted");
+			return false;
+		}
+	</script>
+</html>

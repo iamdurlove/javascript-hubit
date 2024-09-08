@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>This is Javascript</title>
+	</head>
+
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			width: 200px;
+			gap: 10px;
+		}
+		form .input-div {
+			display: flex;
+			flex-direction: column;
+		}
+	</style>
+	<body>
+		<h1 id="title"></h1>
+		<form onsubmit="return validate(event)">
+			<div class="input-div">
+				<label for="username">Username</label>
+				<input id="username" type="text" />
+				<span class="err-span" id="username-error"></span>
+			</div>
+			<div class="input-div">
+				<label for="password">Password</label>
+				<input id="password" type="password" />
+				<span class="err-span" id="password-error"></span>
+			</div>
+
+			<div class="input-div">
+				<label for="cpassword">Confirm Password</label>
+				<input id="cpassword" type="password" />
+				<span class="err-span" id="cpassword-error"></span>
+			</div>
+
+			<div class="input-div">
+				<button type="submit">Submit</button>
+			</div>
+			<span id="success-msg"></span>
+		</form>
+	</body>
+
+	<script>
+		const title = document.getElementById("title");
+		console.log(name);
+		title.innerHTML = "Form Validation";
+
+		function validate(e) {
+			e.preventDefault();
+			const username = document.getElementById("username").value;
+			const password = document.getElementById("password").value;
+			const cpassword = document.getElementById("cpassword").value;
+
+			var usernameError = document.getElementById("username-error");
+			var passwordError = document.getElementById("password-error");
+			var cpasswordError = document.getElementById("cpassword-error");
+			var successMsg = document.getElementById("success-msg");
+
+			// var spans = document.querySelectorAll("span");
+			// for (item of spans) {
+			// 	item.style.color = "red";
+			// 	item.style.fontSize = "10px";
+			// }
+
+			var spans = document.getElementsByClassName("err-span");
+			for (item of spans) {
+				console.log(item);
+				item.style.color = "red";
+				item.style.fontSize = "10px";
+			}
+
+			usernameError.textContent = "";
+			passwordError.textContent = "";
+			cpasswordError.textContent = "";
+			successMsg.textContent = "";
+
+			let isValid = true;
+
+			if (username === "") {
+				usernameError.textContent = "Username is required";
+				isValid = false;
+			} else if (username.length < 4) {
+				usernameError.textContent = "Username must be at least 4 characters";
+				isValid = false;
+			}
+
+			if (password === "") {
+				passwordError.textContent = "Password is required";
+				isValid = false;
+			} else if (password.length < 8) {
+				passwordError.textContent = "Password must be at least 8 characters";
+				isValid = false;
+			}
+
+			if (cpassword === "") {
+				cpasswordError.textContent = "Confirm Password is required";
+				isValid = false;
+			} else if (password !== cpassword) {
+				passwordError.textContent = "Password does not match";
+				cpasswordError.textContent = "Password does not match";
+				isValid = false;
+			}
+
+			if (isValid) {
+				successMsg.style.color = "green";
+				successMsg.style.fontSize = "10px";
+				successMsg.textContent = "Form submitted successfully";
+			}
+
+			return isValid;
+		}
+
+		// function validate(e) {
+		// 	e.preventDefault();
+		// 	const username = document.getElementById("username").value;
+		// 	const password = document.getElementById("password").value;
+		// 	const cpassword = document.getElementById("cpassword").value;
+
+		// 	var usernameError = document.getElementById("username-error");
+		// 	var passwordError = document.getElementById("password-error");
+		// 	var cpasswordError = document.getElementById("cpassword-error");
+		// 	var successMsg = document.getElementById("success-msg");
+
+		// 	usernameError.textContent = "";
+		// 	passwordError.textContent = "";
+		// 	cpasswordError.textContent = "";
+		// 	successMsg.textContent = "";
+
+		// 	let isValid = true;
+
+		// 	if (username === "") {
+		// 		// alert("Please fill all the fields");
+		// 		usernameError.textContent = "Username is required";
+
+		// 		isValid = false;
+		// 	} else if (username.length < 3) {
+		// 		// alert("Username must be at least 3 characters");
+		// 		usernameError.textContent = "Username must be at least 3 characters";
+		// 		isValid = false;
+		// 	}
+		// 	if (password === "") {
+		// 		// alert("Please fill all the fields");
+		// 		passwordError.textContent = "Password is required";
+		// 		isValid = false;
+		// 	} else if (password.length < 8) {
+		// 		// alert("Password must be at least 8 characters");
+		// 		passwordError.textContent = "Password must be at least 8 characters";
+		// 		cpasswordError.textContent = "Password must be at least 8 characters";
+		// 		isValid = false;
+		// 	}
+		// 	if (cpassword === "") {
+		// 		// alert("Please fill all the fields");
+		// 		cpasswordError.textContent = "Confirm Password is required";
+		// 		isValid = false;
+		// 	}
+
+		// 	if (password !== cpassword) {
+		// 		// alert("Password does not match");
+		// 		passwordError.textContent = "Password does not match";
+		// 		cpasswordError.textContent = "Password does not match";
+		// 		isValid = false;
+		// 	}
+
+		// 	// alert("Form submitted successfully");
+		// 	if (isValid) {
+		// 		successMsg.textContent = "Form submitted successfully";
+		// 	}
+		// 	return isValid;
+		// }
+	</script>
+</html>
