@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rest and spread operators</title>
+	</head>
+	<body></body>
+	<script>
+		// const array = [5, 4, 3];
+		// const newArray = [1, 2, array[0], array[1], array[2]];
+
+		// console.log(array);
+		// console.log(newArray);
+
+		// spread operator
+		// const spreadArray = [1, 2, ...array];
+		// console.log(spreadArray);
+
+		// const arr1 = [2, 3, 5];
+		// const arr2 = [7, 8, 9];
+
+		// console.log([...arr1, ...arr2]);
+
+		// rest operator
+		// const myFunction = (a, b, c) => {
+		// 	console.log(a + b + c);
+		// };
+
+		// const arr = [5, 6, 3];
+
+		// old method
+		// myFunction(arr[0], arr[1], arr[2]);
+
+		//es6 method using rest operator
+		// myFunction(...arr);
+
+		// enhanced object literals
+
+		// const myKey = "organization";
+		// const myObj = {
+		// 	[myKey]: "Hub IT",
+		// 	address: "Butwal",
+		// };
+
+		// console.log(myObj);
+
+		// const key1 = prompt("Enter key 1");
+		// const value1 = prompt("Enter value 1");
+		// const key2 = prompt("Enter key 2");
+		// const value2 = prompt("Enter value 2");
+		// const key3 = prompt("Enter key 3");
+		// const value3 = prompt("Enter value 3");
+
+		// const myObj = {
+		// 	[key1]: value1,
+		// 	[key2]: value2,
+		// 	[key3]: value3,
+		// };
+		// console.log(myObj);
+
+		const name = "Ram";
+		const age = 25;
+		const address = "Kathmandu";
+		const contact = "07154545";
+
+		const myObj = {
+			name,
+			age,
+			address,
+			contact,
+		};
+
+		console.log(myObj);
+	</script>
+</html>

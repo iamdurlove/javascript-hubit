@@ -6,7 +6,37 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<h1>Hello World</h1>
-		<h1>HI</h1>
+		<!-- <h1 id="e1">Hello World</h1>
+
+		<div id="e3">
+			<h1>This is my element</h1>
+			<p>Thi is my paragraph</p>
+			<p>Thi is my paragraph 2</p>
+			<p>Thi is my paragraph 3</p>
+		</div> -->
+
+		<ol>
+			<li>Item 1</li>
+			<li>Item 2</li>
+			<li>Item 3</li>
+			<li>Item 4</li>
+			<li>Item 5</li>
+		</ol>
+
+		<input type="text" id="item" />
+		<button onclick="handleDelete()">Remove</button>
 	</body>
+
+	<script>
+		// const e1 = document.getElementById("e1");
+		// const e3 = document.getElementById("e3");
+		// e1.remove();
+		// e3.remove();
+		// e3.removeChild(e3.children[3]);
+		const target = document.querySelector("ol");
+		function handleDelete() {
+			const item = parseInt(document.getElementById("item").value);
+			target.removeChild(target.children[item - 1]);
+		}
+	</script>
 </html>

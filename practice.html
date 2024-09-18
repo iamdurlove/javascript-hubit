@@ -6,22 +6,33 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<form onclick="handleClick()">
+		<!-- <form onclick="handleClick()">
 			<input type="text" id="input" />
 			<button type="submit">Submit</button>
 		</form>
 
-		<h1 id="data"></h1>
+		<h1 id="data"></h1> -->
 	</body>
 	<script>
-		function handleClick() {
-			var input = document.getElementById("input").value;
-			var set = localStorage.setItem("data", input);
+		// function handleClick() {
+		// 	var input = document.getElementById("input").value;
+		// 	var set = localStorage.setItem("data", input);
 
-			console.log(set);
-		}
+		// 	console.log(set);
+		// }
 
-		var get = localStorage.getItem("data");
-		document.getElementById("data").innerHTML = get;
+		// var get = localStorage.getItem("data");
+		// document.getElementById("data").innerHTML = get;
+
+		var check = confirm("Are you sure to delete this?");
+
+		// if (check == true) {
+		// 	alert("Deleted");
+		// } else {
+		// 	alert("Not deleted");
+		// }
+		// ternary operator
+
+		check ? alert("Deleted") : alert("Not deleted");
 	</script>
 </html>
