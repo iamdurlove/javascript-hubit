@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<table border="collapsed"></table>
+	</body>
+
+	<script>
+		// find
+
+		// const ages = [3, 10, 18, 20];
+
+		// const findAge = ages.find((item) => item === 30);
+		// console.log(findAge);
+
+		// mapping in javascript
+		const obj = [
+			{ name: "John", age: 30 },
+			{ name: "Jane", age: 25 },
+			{ name: "Jim", age: 20 },
+			{ name: "Harry", age: 25 },
+			{ name: "Ram", age: 30 },
+		];
+
+		obj.map((item, i) => {
+			console.log(item);
+		});
+
+		const table = document.querySelector("table");
+
+		const data = obj.map((item, i) => {
+			return `
+		          <tr>
+		              <td>${item.name}</td>
+		              <td>${item.age}</td>
+		          </tr>
+		          `;
+		});
+
+		table.innerHTML = ` <tr>
+                    <th>Name</th>
+                    <th>Age</th>     
+                    ${data.join("")}
+            `;
+	</script>
+</html>

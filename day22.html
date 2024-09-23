@@ -5,6 +5,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 	</head>
+
+	<style>
+		h1 {
+			color: red;
+		}
+	</style>
+
 	<body></body>
 
 	<script>
@@ -53,7 +60,15 @@
 			try {
 				const data = await fetch(URL);
 				const res_data = await data.json();
-				console.log(res_data);
+				// console.log(res_data);
+				let count = 1;
+				for (item of res_data) {
+					var node = document.createElement("h1");
+					var textnode = document.createTextNode(`${count}. ${item.title}`);
+					node.appendChild(textnode);
+					document.body.appendChild(node);
+					count++;
+				}
 			} catch (err) {
 				console.log(err);
 			}
