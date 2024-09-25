@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css" />
+	<script src="main.js"></script>
+</head>
+
+<body>
+	<form action="">
+		<input id="textview" type="text" />
+		<!-- <div style="width: 140px; height: 30px; background-color: aliceblue;" id="display"></div> -->
+
+		<div class="row1">
+			<input type="button" value="C" onclick="clearAll()" name="clear" id="clear" />
+			<input type="button" value="B" onclick="clearOne()" name="backspace" id="backspace" />
+			<input type="button" value="/" onclick="insert('/')" name="divide" id="divide" />
+			<input type="button" value="*" onclick="insert('*')" name="multiply" id="multiply" />
+		</div>
+		<div class="row2">
+			<input type="button" value="7" onclick="insert('7')" name="num7" id="num7" />
+			<input type="button" value="8" onclick="insert('8')" name="num8" id="num8" />
+			<input type="button" value="9" onclick="insert('9')" name="num9" id="num9" />
+			<input type="button" value="-" onclick="insert('-')" name="sub" id="sub" />
+		</div>
+		<div class="row3">
+			<input type="button" value="4" onclick="insert('4')" name="num4" id="num4" />
+			<input type="button" value="5" onclick="insert('5')" name="num5" id="num5" />
+			<input type="button" value="6" onclick="insert('6')" name="num6" id="num6" />
+			<input type="button" value="+" onclick="insert('+')" name="add" id="add" />
+		</div>
+		<div class="row4">
+			<input type="button" value="1" onclick="insert('1')" name="num1" id="num1" />
+			<input type="button" value="2" onclick="insert('2')" name="num2" id="num2" />
+			<input type="button" value="3" onclick="insert('3')" name="num3" id="num3" />
+			<input type="button" style="position: absolute; margin-left: 5px; height: 55px;" value="="
+				onclick="calculate()" name="equal" id="equal" />
+		</div>
+		<div class="row5">
+			<input type="button" style="width: 57px;" value="0" onclick="insert('0')" name="num0" id="num1" />
+			<input type="button" value="." onclick="insert('.')" name="decimal" id="decimal" />
+		</div>
+	</form>
+</body>
+
+</html>
