@@ -1,19 +1,3 @@
-// const insert = (num) => {
-// 	document.getElementById("textview").value += num;
-// };
-
-// const clearAll = () => {
-// 	document.getElementById("textview").value = "";
-// };
-
-// const clearOne = () => {
-// 	const value = document.getElementById("textview").value;
-// 	document.getElementById("textview").value = value.substring(
-// 		0,
-// 		value.length - 1
-// 	);
-// };
-
 // // to verify the input
 // const isValidExpression = (expr) => {
 // 	try {
