@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <table style="text-align:center;" border="collapsed">
+        <th>
+
+
+            <tr style="font-weight: bolder;">
+
+                <td>SN</td>
+                <td>Country</td>
+                <td>Capital</td>
+                <td>Region</td>
+                <td>Population</td>
+                <td>Area</td>
+                <td>Flag</td>
+            </tr>
+        </th>
+
+
+        <tbody id="data-row">
+
+        </tbody>
+
+    </table>
+</body>
+
+
+<script>
+
+
+    const fetchData = async () =>
+    {
+        const URL = "https://restcountries.com/v3.1/all"
+        try
+        {
+            const response = await fetch( URL )
+            const data = await response.json()
+            if ( response.ok )
+            {
+                console.log( data )
+                return data
+            }
+            else
+                console.log( "Error", response )
+        }
+        catch ( err )
+        {
+            console.log( err )
+        }
+    }
+
+    const displayData = async () =>
+    {
+        const data = await fetchData()
+        const dataRow = document.getElementById( "data-row" )
+
+        let count = 1
+        for ( let item of data )
+        {
+            const country = item.name.common
+            const capital = item.capital
+            const region = item.region
+            const population = item.population
+            const area = item.area
+            const flag = item.flags.png
+
+            const tr = document.createElement( "tr" )
+            tr.innerHTML = `
+                <tr>
+                <td>${ count }</td> 
+                <td>${ country }</td>
+                <td>${ capital }</td>
+                <td>${ region }</td>
+                <td>${ population }</td>
+                <td>${ area }</td>
+                <td><img src="${ flag }" alt="flag" width="50px" height="50px"></td>
+                </tr>
+            `
+            count++
+            dataRow.appendChild( tr )
+        }
+
+    }
+
+    displayData();
+
+
+</script>
+
+</html>
