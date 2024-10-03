@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Toggle Dark & Light Mode Using tailwindcss</title>
+</head>
+
+<body>
+    <!-- <div class="cursor-pointer mt-20 flex justify-center items-center duration-500 hover:scale-125">
+
+        <h1
+            class="flex justify-center items-center hover:bg-red-500 rounded-[50%] duration-500 text-center text-xl text-white bg-blue-500 w-[200px] h-[200px] from-slate-400 border-2 bg-gradient-to-r from-purple-500 to-pink-500">
+            Hello world!
+        </h1>
+        <h1
+            class="flex justify-center items-center hover:bg-red-500 rounded-[50%] duration-500 text-center text-xl text-white bg-blue-500 w-[200px] h-[200px] from-slate-400 border-2 bg-gradient-to-r from-purple-500 to-pink-500">
+            Hello world!
+        </h1>
+        <h1
+            class="flex justify-center items-center hover:bg-red-500 rounded-[50%] duration-500 text-center text-xl text-white bg-blue-500 w-[200px] h-[200px] from-slate-400 border-2 bg-gradient-to-r from-purple-500 to-pink-500">
+            Hello world!
+        </h1>
+
+    </div> -->
+
+    <div onclick="handleToggle()"
+        class="container border-2 border-white mt-2 ml-2 w-[130px] h-[55px] bg-black pointer-cursor rounded-[50px]">
+        <div
+            class="toggle duration-500 w-[45px] h-[45px] bg-white rounded-[50%] border-2 border-red-500 relative top-[6.8%] left-[3%]">
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+    const handleToggle = () =>
+    {
+        const toggle = document.querySelector( '.toggle' )
+        const body = document.querySelector( 'body' )
+        body.classList.add( "duration-500" )
+        if ( toggle.classList.contains( 'left-[61%]' ) )
+        {
+            toggle.classList.remove( 'left-[61%]' )
+            toggle.classList.add( 'left-[3%]' )
+            body.classList.remove( "bg-black" )
+            body.classList.add( "bg-white" )
+        } else
+        {
+            toggle.classList.remove( 'left-[3%]' )
+            toggle.classList.add( 'left-[61%]' )
+            body.classList.remove( "bg-white" )
+            body.classList.add( "bg-black" )
+        }
+    }
+</script>
+
+</html>

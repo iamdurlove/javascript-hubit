@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<div class="search">
+    <input type="text" id="search" placeholder="Search Country">
+    <button onclick="displayData()">Search</button>
+</div>
+
+<table style="text-align:center;" border="collapsed">
+    <th>
+        <tr style="font-weight: bolder;">
+            <td>SN</td>
+            <td>Country</td>
+            <td>Capital</td>
+            <td>Region</td>
+            <td>Population</td>
+            <td>Area</td>
+            <td>Flag</td>
+        </tr>
+    </th>
+    <tbody id="data-row">
+
+    </tbody>
+
+</table>
+</body>
+
+
+<script>
+
+    const fetchData = async () =>
+    {
+        const URL = "https://restcountries.com/v3.1/all"
+        try
+        {
+            const response = await fetch( URL )
+            const data = await response.json()
+            if ( response.ok )
+            {
+                console.log( data )
+                return data
+            }
+            else
+                console.log( "Error", response )
+        }
+        catch ( err )
+        {
+            console.log( err )
+        }
+    }
+
+    const displayData = async () =>
+    {
+        const search = document.getElementById( "search" ).value
+        const data = await fetchData()
+        const filter = data.filter( item => item.name.common.toLowerCase().includes( search.toLowerCase() ) )
+        console.log( filter )
+        const dataRow = document.getElementById( "data-row" )
+        dataRow.innerHTML = ""
+        let count = 1
+        for ( let item of filter )
+        {
+            const country = item.name.common
+            const capital = item.capital
+            const region = item.region
+            const population = item.population
+            const area = item.area
+            const flag = item.flags.png
+
+            const tr = document.createElement( "tr" )
+            tr.innerHTML = `
+                <td>${ count }</td> 
+                <td>${ country }</td>
+                <td>${ capital }</td>
+                <td>${ region }</td>
+                <td>${ population }</td>
+                <td>${ area }</td>
+                <td><img src="${ flag }" alt="flag" width="50px" height="50px"></td>
+            `
+            count++
+            dataRow.appendChild( tr )
+        }
+
+    }
+
+    displayData();
+
+
+</script>
+
+</html>

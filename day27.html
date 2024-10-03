@@ -8,11 +8,8 @@
 </head>
 
 <body>
-
     <table style="text-align:center;" border="collapsed">
         <th>
-
-
             <tr style="font-weight: bolder;">
 
                 <td>SN</td>
@@ -24,18 +21,12 @@
                 <td>Flag</td>
             </tr>
         </th>
-
-
         <tbody id="data-row">
-
         </tbody>
-
     </table>
 </body>
 
-
 <script>
-
 
     const fetchData = async () =>
     {
@@ -62,6 +53,7 @@
     {
         const data = await fetchData()
         const dataRow = document.getElementById( "data-row" )
+        dataRow.innerHTML = ""
 
         let count = 1
         for ( let item of data )
@@ -75,7 +67,6 @@
 
             const tr = document.createElement( "tr" )
             tr.innerHTML = `
-                <tr>
                 <td>${ count }</td> 
                 <td>${ country }</td>
                 <td>${ capital }</td>
@@ -83,17 +74,13 @@
                 <td>${ population }</td>
                 <td>${ area }</td>
                 <td><img src="${ flag }" alt="flag" width="50px" height="50px"></td>
-                </tr>
             `
             count++
             dataRow.appendChild( tr )
         }
-
     }
 
     displayData();
-
-
 </script>
 
 </html>

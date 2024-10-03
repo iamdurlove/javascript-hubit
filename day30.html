@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Dark & Light Mode</title>
+</head>
+
+<style>
+    body {
+        transition: 0.5s;
+    }
+
+    .container {
+        width: 130px;
+        height: 60px;
+        border-radius: 55px;
+        background-color: black;
+        border: 2 px solid blue;
+        cursor: pointer;
+    }
+
+    .toggle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: white;
+        border: 2px solid blue;
+        position: relative;
+        top: 5.4%;
+        left: 2.5%;
+        /* left: 57%; */
+        transition: 0.5s;
+    }
+</style>
+
+<body>
+
+    <div onclick="handleToggle()" class="container">
+        <div class="toggle"></div>
+    </div>
+
+
+</body>
+
+<script>
+    const handleToggle = () =>
+    {
+        const toggle = document.querySelector( '.toggle' )
+        if ( toggle.style.left == '57%' )
+        {
+            toggle.style.left = '2.5%'
+            document.querySelector( 'body' ).style.backgroundColor = "white"
+        }
+        else
+        {
+            toggle.style.left = '57%'
+            document.querySelector( 'body' ).style.backgroundColor = "black"
+        }
+    }
+</script>
+
+</html>
